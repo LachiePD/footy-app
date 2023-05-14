@@ -1,17 +1,48 @@
-import React from 'react';
+import React, { useState, useContext, createContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import Root from './routes/Root.jsx';
+import Ladder from './routes/Ladder.jsx';
+import TeamPage from './routes/TeamPage.jsx';
+import ErrorPage from './routes/ErrorPage.jsx';
+import {teamLoader, ladderLoader} from './api/api.js';
 
+export const TeamContext = createContext();
+
+const router = createBrowserRouter([
+	{
+		path:'/',
+		element:<Root/>,
+		errorElement:<ErrorPage/>,
+		loader:teamLoader,
+		children:[{
+			path:'/',
+			element:<Ladder/>,
+			errorElement:<ErrorPage/>,
+			loader:ladderLoader,	
+		},
+		{
+			path:'/teamPage',
+			element:<TeamPage/>,
+			errorElement:<ErrorPage/>,
+			}]
+	}
+])
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () =>{
+	const [selectedTeam, setSelectedTeam] = useState(null);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+	return(
+		<React.StrictMode>
+		<TeamContext.Provider value={{selectedTeam, setSelectedTeam}}>
+		<RouterProvider router={router}/>
+		</TeamContext.Provider>
+		</React.StrictMode>
+	);
+
+}
+root.render(<App/>);
+
 reportWebVitals();

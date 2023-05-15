@@ -1,23 +1,28 @@
 const url = process.env.REACT_APP_SQUIGGLE_URL;
-
-
+const todaysDate = new Date();
 const teamLoader = async() =>{
 	const response = await fetch(url + "/?q=teams");
 	const data = await response.json();
-	console.log(data.teams);
 	return data.teams;
 }
 
 const ladderLoader = async() => {
 
-	const response = await fetch(url+"/?q=ladder");
+	const year = todaysDate.getFullYear();
+	const response = await fetch(url+"?q=standings");
 	const data = await response.json();
-	console.log(data);
-	return data;
+	return data.standings;
 
 }
 
+const teamPageLoader = async(id) =>{
+	const year = todaysDate.getFullYear();
+	const res = await fetch(url+"?q=games;"+"year="+year+";team="+id);
+	const data = await res.json();
+	return data;
+}
 module.exports={
 	teamLoader,
 	ladderLoader,
+	teamPageLoader,
 }

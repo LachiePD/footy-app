@@ -23,10 +23,16 @@ html, body{
 	max-height:100vh;
 }
 #mainSide{
-	width:100%;
+	flex:3;
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:center;
+}
+#contentBlock{
+	height:80%;
+	width:100%;
+	padding:2rem;
+
 }
 #contentHeader{
 	display:flex;
@@ -34,13 +40,13 @@ html, body{
 	align-items:center;
 	text-align:center;
 	width:100%;
-	height:20%;
+	height:10%;
 	border-bottom:1px solid black;
 }
 #sidebar{
+	flex:1;
 	max-height:100vh;
 	display:flex;
-	width:30%;
 	flex-wrap:wrap;
 	justify-content:center;
 	overflow:hidden;
@@ -53,7 +59,6 @@ html, body{
 	overflow:auto;
 	gap:1vh;
 }
-
 .teamBlock{
 	display:flex;
 	text-align:center;
@@ -67,5 +72,21 @@ html, body{
 }
 .teamBlock:hover{
 	opacity:0.6;
-
+}
+#ladder{
+	flex-wrap:wrap;
+	display:flex;
+	height:100%;
+	max-width:100%;
+	justify-content:center;
+	text-align:center;
+	font-size:1rem;
+	overflow:scroll;
+	gap:1rem;
+}
+.tableRow{
+	display:flex;
+	width:100%;
+	justify-content:space-around;
+	border-bottom:black 1px solid;
 }

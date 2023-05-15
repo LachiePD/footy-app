@@ -16,7 +16,7 @@ const TeamBlock = (props) =>{
 	return(
 		<div className="teamBlock"
 		onClick={handleClick}>
-		<Link className="teamBlock" to='/teamPage'>
+		<Link className="teamBlock" to={`/teamPage/${selectedTeam.id}`}>
                         <span>  {props.team.name}</span>
                                 <img  className="teamBlockImage" src={logoUrl} alt="Missing image"/>
 	</Link>

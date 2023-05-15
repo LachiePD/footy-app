@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {TeamContext} from '../index.js';
+import {useLoaderData} from 'react-router-dom';
+
 
 const TeamPage = () =>{
-
+	const {selectedTeam , setSelectedTeam} = useContext(TeamContext);
+	const teamPageData = useLoaderData();
 	return(
-		<>
-		TeamPage
-		</>
+		<div id="teamPage">
+		hey
+		</div>
 
 	);
 

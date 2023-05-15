@@ -4,11 +4,15 @@ import TableRow from '../components/TableRow.jsx';
 
 const Ladder = () =>{
 	const ladderData = useLoaderData();
-	const [ladder, setLadder] = useState();
 	return(
-		<>
-		<h1>LADDER</h1>
-		</>
+		<div id="ladder">
+		{	
+			ladderData.map((row)=>(
+				<TableRow team={row}/>
+
+			))
+		}
+		</div>
 	);
 }
 

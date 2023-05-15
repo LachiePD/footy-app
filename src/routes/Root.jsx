@@ -9,9 +9,9 @@ const Root = () =>{
 	const {selectedTeam, setSelectedTeam} = useContext(TeamContext);
 	return(
 		<div id="root">
-		
+
 		<div id='sidebar'>
-			<h1>Team Picker</h1>
+		<h1>Team Picker</h1>
 		<form id="teamForm">
 		{teams.map((team) => {
 			const logoUrl = "https://squiggle.com.au"+ team.logo;
@@ -24,17 +24,15 @@ const Root = () =>{
 		</form>
 
 		</div>
-		
-		
+
 		<div id="mainSide">
-		
+
 		<div id="contentHeader">
 		<h1 > Welcome to the team picker!</h1>
 		</div>
 
-		
 		<div id="contentBlock">
-			<Outlet/>
+		<Outlet/>
 		</div>
 
 		</div>

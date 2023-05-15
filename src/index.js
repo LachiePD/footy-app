@@ -7,7 +7,7 @@ import Root from './routes/Root.jsx';
 import Ladder from './routes/Ladder.jsx';
 import TeamPage from './routes/TeamPage.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
-import {teamLoader, ladderLoader} from './api/api.js';
+import {teamLoader, ladderLoader, teamPageLoader} from './api/api.js';
 
 export const TeamContext = createContext();
 
@@ -24,15 +24,16 @@ const router = createBrowserRouter([
 			loader:ladderLoader,	
 		},
 		{
-			path:'/teamPage',
+			path:'/teamPage/:teamId',
 			element:<TeamPage/>,
 			errorElement:<ErrorPage/>,
+			loader: ({params})=>{return teamPageLoader(params.teamId)},
 			}]
 	}
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const App = () =>{
-	const [selectedTeam, setSelectedTeam] = useState(null);
+	const [selectedTeam, setSelectedTeam] = useState("");
 
 	return(
 		<React.StrictMode>

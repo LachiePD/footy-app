@@ -34,7 +34,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const App = () =>{
 	const [selectedTeam, setSelectedTeam] = useState({});
-
 	return(
 		<React.StrictMode>
 		<TeamContext.Provider value={{selectedTeam, setSelectedTeam}}>
@@ -42,8 +41,6 @@ const App = () =>{
 		</TeamContext.Provider>
 		</React.StrictMode>
 	);
-
 }
 root.render(<App/>);
-
 reportWebVitals();

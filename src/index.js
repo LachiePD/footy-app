@@ -33,7 +33,7 @@ const router = createBrowserRouter([
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const App = () =>{
-	const [selectedTeam, setSelectedTeam] = useState("");
+	const [selectedTeam, setSelectedTeam] = useState({});
 
 	return(
 		<React.StrictMode>

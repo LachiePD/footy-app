@@ -15,10 +15,10 @@ const TeamBlock = (props) =>{
 	}
 	return(
 		<div className="teamBlock"
-		onClick={handleClick}>
-		<Link className="teamBlock" to={`/teamPage/${selectedTeam.id}`}>
-                        <span>  {props.team.name}</span>
-                                <img  className="teamBlockImage" src={logoUrl} alt="Missing image"/>
+		>
+		<Link onClick={handleClick} className="teamBlock" to={`/teamPage/${props.team.id}`}>
+                        <span>{props.team.name}</span>
+                                <img className="teamBlockImage" src={logoUrl} alt="Missing image"/>
 	</Link>
 		</div>
 	);

@@ -87,6 +87,23 @@ html, body{
 .tableRow{
 	display:flex;
 	width:100%;
-	justify-content:space-around;
+	justify-content:center;
 	border-bottom:black 1px solid;
+}
+#teamPage{
+	display:flex;
+	overflow:scroll;
+	width:100%;
+	height:100%;
+	border: solid black 1px;
+	flex-wrap:wrap;
+}
+.teamPageRow{
+	display:flex;
+	width:100%;
+}
+.tableCell{
+	flex:1;
+	text-align:center;
+	border:1px solid black;
 }

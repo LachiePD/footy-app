@@ -57,7 +57,7 @@ html, body{
 	display:flex;
 	flex-wrap:wrap;
 	overflow:auto;
-	gap:1vh;
+	gap:5vh;
 }
 .teamBlock{
 	display:flex;
@@ -65,10 +65,19 @@ html, body{
 	align-items:center;
 	width:100%;
 	justify-content:space-around;
-	max-height:100%;
 	font-size:1.5rem;
 	text-decoration:none;
 	color:black;
+}
+.teamBlockTeamName{
+	flex:3;
+}
+#teamBlockImageContainer{
+	min-height:2rem;
+	background-size:cover;
+	background-position:center;
+	flex:1
+
 }
 .teamBlock:hover{
 	opacity:0.6;

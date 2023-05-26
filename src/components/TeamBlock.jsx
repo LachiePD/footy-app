@@ -14,11 +14,14 @@ const TeamBlock = (props) =>{
 		}catch(err){console.log(err)}
 	}
 	return(
-		<div className="teamBlock"
-		>
+		<div className="teamBlock">
 		<Link onClick={handleClick} className="teamBlock" to={`/teamPage/${props.team.id}`}>
-                        <span>{props.team.name}</span>
-                                <img className="teamBlockImage" src={logoUrl} alt="Missing image"/>
+                <div className="teamBlockTeamName">        
+		<span>{props.team.name}</span>
+		</div>
+               	<div id="teamBlockImageContainer">
+		<img styles={{objectFit:'contain'}} src={logoUrl}/>
+		</div>
 	</Link>
 		</div>
 	);
